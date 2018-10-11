@@ -8,8 +8,9 @@ function [pvals,pvalsFWE,pvalmat] = permtestmass_NPC(Yin,Xin,Nperm,Perms,conf,..
 % ARGUMENTS
 % - Yin: Noisy replications
 % - Xin: Observed behavioural variables.
-% - Nperm is the number of permutations
-% - conf are the confounds
+% - Nperm: is the number of permutations
+% - Perms: Precomputed permutations (e.g. using Palm) 
+% - conf: the confounds we want to regress out
 % - Perms: precomputed permutations, (Nsubjects by Nperm)
 % - groupingY: grouping of variables in Yin, by default no grouping
 % - groupingX: grouping of variables in Xin, by default no grouping;
