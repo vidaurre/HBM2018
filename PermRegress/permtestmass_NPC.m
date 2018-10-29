@@ -138,7 +138,7 @@ parfor i1 = 2:Nperm
             end
         end
     end
-    T(i1,:) = -2 * sum(log(pv(:,:,1)));
+    T(i1,:) = -2 * sum(log(pv));
     if verbose, disp(num2str(i1)); end
 end
 
