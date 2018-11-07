@@ -38,7 +38,7 @@ for N = Ns
             AllPvals(rep,inu,:) = pv0;
             Pvals(rep,inu) = pv;
             Pvals0(rep,inu) = mean(pv0);
-            pvr = permtestmass_regress(Y,x,10000);
+            pvr = permtest_regress(Y,x,10000);
             PvalsRegression(rep,inu) = pvr; 
             %disp([num2str(rep) ' : ' num2str(inu)])
         end
@@ -82,7 +82,7 @@ for N = 200
             AllPvals(rep,inu,:) = pv0;
             Pvals(rep,inu) = pv;
             Pvals0(rep,inu) = mean(pv0);
-            pvr = permtestmass_regress(Y,x,10000);
+            pvr = permtest_regress(Y,x,10000);
             PvalsRegression(rep,inu) = pvr; 
             %disp([num2str(rep) ' : ' num2str(inu)])
         end

@@ -1,4 +1,4 @@
-function pvals = permtestmass_regress(Yin,Xin,Nperm,Perms,conf,verbose)
+function pvals = permtest_regress(Yin,Xin,Nperm,Perms,conf,verbose)
 % 
 % It tests all replications (column) of Xin vs each variable (column) of Yin, 
 % using linear regression embedded in permutation testing 
@@ -29,7 +29,7 @@ N = size(Xin,1);
 R = size(Yin,2);
 P = size(Xin,2);
 
-if ~isempty(conf)
+if ~isempty(conf) % we should put this inside the GLM instead of regressing out
     conf = conf - repmat(mean(conf),N,1);
     Yin = Yin - repmat(mean(Yin),N,1);
     Yin = Yin - conf * pinv(conf) * Yin;
@@ -71,5 +71,3 @@ end
 pvals = sum( repmat(sqerr(1,:),Nperm,1) >= sqerr ) ./ (1 + Nperm) ;
 
 end
-
-
